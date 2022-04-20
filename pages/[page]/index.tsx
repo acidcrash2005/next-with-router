@@ -1,32 +1,35 @@
 import React from 'react';
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes, Link} from "react-router-dom";
+import NextLink from "next/link";
 import {GetServerSidePropsContext} from "next";
-import {useRouter} from "next/router";
 
-interface Props {
-}
+const Index: React.FC = () => {
+    return  (
+        <div>
+            Text static next
+            <Routes>
+                <Route path='/tasdasda' element={<h1>/tasdasda</h1>} />
+                <Route path='/custom_link' element={<h1>/custom_link</h1>} />
+                <Route path='/test' element={<h1>/test</h1>} />
+                <Route path="*" element={<DynamicComponent />} />
+            </Routes>
 
-const Test = () => {
-    return <h1>Test</h1>
-}
+            <div>
+                <Link to='/dynamic'>To DynamicComponent</Link>
+            </div>
 
-const Index: React.FC<Props> = ({}) => {
-    const { query } = useRouter();
-
-    const { pathname } = useLocation();
-
-    return  <div>
-        test text
-        <Routes>
-            <Route path={'/'} element={null} />
-            <Route path={'/tasdasda'} element={<h1>tasdasda</h1>} />
-            <Route path={'/custom_link'} element={<h1>custom_link</h1>} />
-            <Route path={'/test'} element={<Test />} />
-        </Routes>
-    </div>;
+            <div><b>------</b></div>
+            <NextLink href={'/'}>Home next link</NextLink>
+        </div>
+    );
 };
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+const DynamicComponent: React.FC = () => {
+    return <div><h1>DynamicComponent</h1></div>
+}
+
+// Need for pass to server props query from location
+export const  getServerSideProps = async(context: GetServerSidePropsContext) => {
     return {
         props: {
             query: context.query
