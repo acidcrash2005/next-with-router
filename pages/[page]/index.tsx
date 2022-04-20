@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route, Routes, Link} from "react-router-dom";
 import {GetServerSideProps, InferGetServerSidePropsType} from "next";
-import Nav from "../navigate";
-import DynamicComponent from "../DynamicComponent";
-import type {DataSchema} from '../types'
+import Nav from "../../navigate";
+import DynamicComponent from "../../components/DynamicComponent";
+import type {DataSchema} from '../../types'
 
 const Index: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (props) => {
     return  (

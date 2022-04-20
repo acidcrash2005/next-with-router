@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from 'next'
-import Nav from './navigate';
+import Nav from '../navigate';
 
 import styles from '../styles/Home.module.css'
 

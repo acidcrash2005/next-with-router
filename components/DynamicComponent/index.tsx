@@ -1,5 +1,5 @@
 import React from 'react';
-import type {DataSchema} from '../types'
+import type {DataSchema} from '../../types'
 import MatchList from '../MatchList'
 import News from '../News'
 
