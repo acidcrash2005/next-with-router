@@ -34,8 +34,6 @@ const App = () => {
         {/*    <Route path={'/test'} element={<Test />} />*/}
         {/*</Routes>*/}
 
-        <Link to={'/test'}>Router Link</Link>
-        {' '}|{' '}
         <NextLink href={'/custom_link'}>Next link</NextLink>
         {' '}|{' '}
         <NextLink href={'/'}>Home next link</NextLink>
