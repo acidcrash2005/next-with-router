@@ -23,6 +23,10 @@ const Nav: React.FC = () => {
     return (
         <ul>
             <li>
+                <NextLink href={'/custom_link'}>Native Link</NextLink>
+            </li>
+            <li>
+
                 <NextLink href={'/custom_link'} passHref={true}>
                     <SmartLink>Custom LInk to custom_link</SmartLink>
                 </NextLink>
